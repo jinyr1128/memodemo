@@ -4,16 +4,15 @@ import com.springex.memodemo.dto.MemoRequestDto;
 import com.springex.memodemo.dto.MemoResponseDto;
 import com.springex.memodemo.entity.Memo;
 import com.springex.memodemo.repository.MemoRepository;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
 public class MemoService {
     private final MemoRepository memoRepository;
 
-    public MemoService(JdbcTemplate jdbcTemplate) {
+    public MemoService(MemoRepository memoRepository) {
 
-        this.memoRepository = new MemoRepository(jdbcTemplate);
+        this.memoRepository = memoRepository;
     }
 
     public MemoResponseDto createMemo(MemoRequestDto requestDto) {

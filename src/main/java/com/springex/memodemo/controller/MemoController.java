@@ -4,7 +4,6 @@ package com.springex.memodemo.controller;
 import com.springex.memodemo.dto.MemoRequestDto;
 import com.springex.memodemo.dto.MemoResponseDto;
 import com.springex.memodemo.service.MemoService;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,9 +14,9 @@ public class MemoController {
 
     private final MemoService memoService;
 
-    public MemoController(JdbcTemplate jdbcTemplate) {
+    public MemoController(MemoService memoService) {
 
-        this.memoService = new MemoService(jdbcTemplate);
+        this.memoService = memoService;
     }
 
     @PostMapping("/memos")
