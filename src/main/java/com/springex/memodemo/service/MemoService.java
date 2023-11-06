@@ -4,11 +4,8 @@ import com.springex.memodemo.dto.MemoRequestDto;
 import com.springex.memodemo.dto.MemoResponseDto;
 import com.springex.memodemo.entity.Memo;
 import com.springex.memodemo.repository.MemoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
-@Component
 public class MemoService {
     private final MemoRepository memoRepository;
 
